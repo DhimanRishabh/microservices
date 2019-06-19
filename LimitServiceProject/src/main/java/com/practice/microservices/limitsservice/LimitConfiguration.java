@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties("limit-service")
 public class LimitConfiguration {
-      int min;
-      int max;
+    int min;
+    int max;
 
     public int getMin() {
         return min;

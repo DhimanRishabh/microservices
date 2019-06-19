@@ -1,8 +1,8 @@
 package com.practice.microservices.limitsservice;
 
 public class LimitBean {
-   int max;
-   int min;
+    int max;
+    int min;
 
     public LimitBean() {
     }

@@ -10,9 +10,10 @@ public class LimitController {
 
     @Autowired
     LimitConfiguration limitConfiguration;
+
     @GetMapping("/getAll")
     public LimitBean getAllLimits() {
 
-        return new LimitBean(limitConfiguration.getMin(),limitConfiguration.getMax());
+        return new LimitBean(limitConfiguration.getMin(), limitConfiguration.getMax());
     }
 }
