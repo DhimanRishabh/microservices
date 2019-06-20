@@ -6,16 +6,16 @@ public class ExchangeValue {
     long id;
     String from;
     String to;
-    BigDecimal exchnageRate;
+    BigDecimal exchangeRate;
     int port;
     public ExchangeValue() {
     }
 
-    public ExchangeValue(long id, String from, String to, BigDecimal exchnageRate, int port) {
+    public ExchangeValue(long id, String from, String to, BigDecimal exchangeRate, int port) {
         this.id = id;
         this.from = from;
         this.to = to;
-        this.exchnageRate = exchnageRate;
+        this.exchangeRate = exchangeRate;
         this.port = port;
     }
 
@@ -51,11 +51,11 @@ public class ExchangeValue {
         this.to = to;
     }
 
-    public BigDecimal getExchnageRate() {
-        return exchnageRate;
+    public BigDecimal getExchangeRate() {
+        return exchangeRate;
     }
 
-    public void setExchnageRate(BigDecimal exchnageRate) {
-        this.exchnageRate = exchnageRate;
+    public void setExchangeRate(BigDecimal exchnageRate) {
+        this.exchangeRate = exchnageRate;
     }
 }
