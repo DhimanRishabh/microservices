@@ -77,4 +77,17 @@ public class CurrencyConversionBean {
     public void setExchangeRate(int exchangeRate) {
         this.exchangeRate = exchangeRate;
     }
+
+    @Override
+    public String toString() {
+        return "CurrencyConversionBean{" +
+                "id=" + id +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", calculatedAmount=" + calculatedAmount +
+                ", port=" + port +
+                ", quantity=" + quantity +
+                ", exchangeRate=" + exchangeRate +
+                '}';
+    }
 }

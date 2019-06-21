@@ -2,6 +2,8 @@ package com.microservices.currencyconversion;
 
 
 import com.sun.javafx.collections.MappingChange;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,7 @@ public class CurrencyConversionController {
 
     @Autowired
     CurrencyExchangeServerProxy cUrrencyExchangeServerProxy;
+    Logger log= LoggerFactory.getLogger(CurrencyConversionController.class);
 
     @GetMapping("currency-conversion/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversionBean getConversionValue(
@@ -35,6 +38,7 @@ public class CurrencyConversionController {
 //                ResponseEntity<CurrencyConversionBean> responseEntity= new RestTemplate().getForEntity("http://localhost:8000/currency-exchange/{from}/to/{to}",CurrencyConversionBean.class,uriV);
 //        CurrencyConversionBean currencyConversionBean=    responseEntity.getBody();
         CurrencyConversionBean currencyConversionBean= cUrrencyExchangeServerProxy.exchangeValue(from,to);
+        log.warn("{}",currencyConversionBean);
         return new CurrencyConversionBean(100, currencyConversionBean.getFrom(), currencyConversionBean.to, quantity*currencyConversionBean.getExchangeRate(), currencyConversionBean.getPort(), quantity, currencyConversionBean.getExchangeRate());
 
     }

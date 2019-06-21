@@ -1,5 +1,6 @@
 package com.microservices.netflixzuulgatewayserver;
 
+import brave.sampler.Sampler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -14,6 +15,11 @@ public class NetflixZuulGatewayServerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(NetflixZuulGatewayServerApplication.class, args);
+    }
+
+    @Bean
+    public Sampler defaultSampler(){
+        return Sampler.ALWAYS_SAMPLE;
     }
 
 
